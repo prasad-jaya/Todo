@@ -75,7 +75,6 @@ const TodoContextProvider = ({children}) =>{
             }); 
             showSuccessNotification('Task Not complete!')
         }
-      
         fetchData();
     }
 

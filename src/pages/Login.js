@@ -6,7 +6,6 @@ import {showSuccessNotification ,showErrorNotification} from "../components/Noti
 const Login = () =>{
 
     const [formData, setFormData] = useState({userName: '' , password: ''});
-    const [ error , setError] = useState('');
     const { login } = useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -18,8 +17,8 @@ const Login = () =>{
             showSuccessNotification('Success!')
             navigate("/account");
         } catch (error) {
-            showErrorNotification('Failed!')
-            setError('Error in Login');
+            console.log(error); 
+            showErrorNotification('Failed!');
         }
     }
 
@@ -46,17 +45,16 @@ const Login = () =>{
                         <div>
                             <label  className="block text-sm font-medium leading-6 text-gray-900">User Name</label>
                             <div className="mt-2">
-                                <input id="userName" value={formData.userName} onChange={handleChange} type="text" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                                <input id="userName" value={formData.userName} onChange={handleChange} type="text" required className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                             </div>
                         </div>
                         <div>
                             <label  className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                             <div className="mt-2">
-                                <input id="password" value={formData.password} onChange={handleChange} type="Password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                                <input id="password" value={formData.password} onChange={handleChange} type="Password" required className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                             </div>
                         </div>   
                         <button type="submit" onClick={handleLogin} className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log In</button>
-                        <div>{error}</div>
                     </form>
                 </div>
             </div>     
