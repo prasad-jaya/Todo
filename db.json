@@ -1,14 +1,14 @@
 {
   "lists": [
     {
-      "title": "as",
-      "description": "as",
+      "title": "Read JavaScript documentation",
+      "description": "Go through the official JavaScript documentation, focusing on ES6 features and modern syntax.",
       "status": "completed",
       "id": 48
     },
     {
-      "title": "asas",
-      "description": "asas",
+      "title": "Attend team meeting",
+      "description": "Participate in the weekly team meeting to discuss project updates and new assignments.",
       "id": 52
     }
   ]
