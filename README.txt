@@ -7,3 +7,8 @@ npm run server
 
 //Open new terminal and Start App
 npm start
+
+
+//Default Login
+UserName : user
+Password: user
